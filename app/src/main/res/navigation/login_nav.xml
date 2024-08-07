@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/fragmentPhoneNumber">
+
+    <fragment
+        android:id="@+id/fragmentOTP"
+        android:name="com.BuildByHirenP.chatblast.fragment.FragmentOTP"
+        android:label="fragment_o_t_p"
+        tools:layout="@layout/fragment_o_t_p" >
+        <action
+            android:id="@+id/action_fragmentOTP_to_profileDetails"
+            app:destination="@id/profileDetails"
+            app:popUpTo="@id/fragmentPhoneNumber" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPhoneNumber"
+        android:name="com.BuildByHirenP.chatblast.fragment.FragmentPhoneNumber"
+        android:label="fragment_phone_number"
+        tools:layout="@layout/fragment_phone_number" >
+        <action
+            android:id="@+id/action_fragmentPhoneNumber_to_fragmentOTP"
+            app:destination="@id/fragmentOTP"
+            app:popUpTo="@id/fragmentPhoneNumber" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileDetails"
+        android:name="com.BuildByHirenP.chatblast.fragment.ProfileDetails"
+        android:label="fragment_profile_details"
+        tools:layout="@layout/fragment_profile_details" >
+        <action
+            android:id="@+id/action_profileDetails_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.BuildByHirenP.chatblast.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

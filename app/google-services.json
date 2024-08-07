@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "749869115284",
+    "project_id": "chat-blast-de68a",
+    "storage_bucket": "chat-blast-de68a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749869115284:android:b8e8b8759b689782109181",
+        "android_client_info": {
+          "package_name": "com.BuildByHirenP.chatblast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTHVn7uPoz6tRHAjp8xKNMaRDlyS4K_JE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

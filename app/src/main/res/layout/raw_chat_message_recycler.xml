@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_3sdp">
+
+    <LinearLayout
+        android:id="@+id/raw_left_chat_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/chat_color_sender"
+        android:orientation="vertical"
+        android:padding="@dimen/_3sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/raw_left_chat_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:text="sajbasaso"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/raw_left_chat_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00 am"
+            android:textSize="@dimen/_7sdp"
+            android:layout_gravity="end"
+            android:textColor="@color/chat_color_time"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/raw_right_chat_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/_3sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:backgroundTint="@color/chat_color_receiver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/raw_right_chat_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shadoshdoia"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/raw_right_chat_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00 am"
+            android:textSize="@dimen/_7sdp"
+            android:layout_gravity="end"
+            android:textColor="@color/chat_color_time"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

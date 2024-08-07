@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raw_search_user_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:elevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp"
+    android:background="@color/white"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/raw_search_user_imageview"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_image" />
+
+        <TextView
+            android:id="@+id/raw_search_user_textview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="TextView"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/raw_search_user_imageview"
+            app:layout_constraintTop_toTopOf="@+id/raw_search_user_imageview" />
+
+        <TextView
+            android:id="@+id/raw_search_user_textview_mobileno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="@+id/raw_search_user_textview_name"
+            app:layout_constraintTop_toBottomOf="@+id/raw_search_user_textview_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

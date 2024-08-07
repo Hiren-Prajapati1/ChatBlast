@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="11dp"
+    android:paddingLeft="21dp"
+    android:paddingRight="21dp"
+    android:background="@color/brand_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/edttext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:textSize="32sp"
+        android:textColor="@color/black"
+        android:padding="11dp"
+        android:text="Update Name"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_update_profile"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/profile_image"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_upload_image"
+            android:layout_width="42dp"
+            android:layout_height="38dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/white"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_update_profile"
+            app:layout_constraintEnd_toEndOf="@+id/img_update_profile"
+            app:srcCompat="@drawable/ic_camera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/update_profile_user_name"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:padding="11dp"
+        android:hint="Enter Name"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btn_update_user_name"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:backgroundTint="@color/white"
+        android:layout_gravity="end"
+        android:layout_marginTop="11dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+</LinearLayout>
