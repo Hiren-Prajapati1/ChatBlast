@@ -19,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.BuildByHirenP.chatblast.adapter.ChatRecyclerAdapter
@@ -34,6 +35,7 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.Query
+import kotlinx.coroutines.launch
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -110,7 +112,9 @@ class ChatActivity : AppCompatActivity() {
         binding.btnsendmessagechat.setOnClickListener {
             val message = binding.messageInputchat.text.toString().trim()
             if (message.isNotEmpty()) {
-                sendMessageToUser(message)
+                lifecycleScope.launch {
+                    sendMessageToUser(message)
+                }
             }
         }
 
@@ -118,7 +122,9 @@ class ChatActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_SEND) {
                 val message = binding.messageInputchat.text.toString().trim()
                 if (message.isNotEmpty()) {
-                    sendMessageToUser(message)
+                    lifecycleScope.launch {
+                        sendMessageToUser(message)
+                    }
                 }
                 return@setOnEditorActionListener true
             }
@@ -185,6 +191,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendMessageToUser(message: String) {
+        binding.btnsendmessagechat.isEnabled = false
         chatroommodel.LastMessageTimestamp = Timestamp.now()
         chatroommodel.LastMessageSenderId = FirebaseUtils.currentUserId()
         chatroommodel.LastMessage = message
@@ -196,6 +203,7 @@ class ChatActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     binding.messageInputchat.setText("")
                     sendNotification(message)
+                    binding.btnsendmessagechat.isEnabled = true
                 }
             }
     }
